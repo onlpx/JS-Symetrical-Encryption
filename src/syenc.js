@@ -1,3 +1,5 @@
+// Copyright 2022 Onlp Inc. All rights reserved.
+
 class SyEnc {
 
     constructor(key) {
@@ -6,7 +8,7 @@ class SyEnc {
         this.fkey = this.__format__(key)
     }
 
-    encrypt(plain) {
+    enc(plain) {
         if (typeof plain != 'object')
             plain = this.s2a(plain)
 
@@ -34,7 +36,7 @@ class SyEnc {
         return btoa(this.a2s(result)) + (rest == "" ? "" : ".") + rest;
     }
 
-    decrypt(encrypted_b64) {
+    dec(encrypted_b64) {
         var rest      = "";
         var encrypted = null;
 
@@ -126,14 +128,3 @@ class SyEnc {
         return result;
     }
 }
-
-plain = "Hello World"
-key   = "key"
-enc   = new SyEnc(key)
-encr  = enc.encrypt("test")
-decr  = enc.decrypt(encr)
-
-console.log("plain > ", plain); // Hello World
-console.log("key   > ", key);   // key
-console.log("encr  > ", encr);  // aDhTaA==
-console.log("decr  > ",decr);   // test

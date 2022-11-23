@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SyEnc - demo</title>
+        <script src="../src/syenc.min.js"></script>
+    </head>
+    <body>
+        <script>
+            plain = "Hello World"
+            key   = "key"
+
+            enc   = new SyEnc(key)
+            encr  = enc.enc("test")
+            decr  = enc.dec(encr)
+
+            console.log("plain > ", plain); // Hello World
+            console.log("key   > ", key);   // key
+            console.log("encr  > ", encr);  // aDhTaA==
+            console.log("decr  > ", decr);  // test
+        </script>
+    </body>
+</html>
