@@ -3,7 +3,7 @@
 
 
 ### usage
-```
+```js
 plain = "Hello World"
 key   = "key"
 
